@@ -13,10 +13,17 @@ class App extends Component {
       gifs: [],
       selectedGifId: "cEYFeDKVPTmRgIG9fmo"
     };
+
+    this.search("homer")
   }
 
   search = (query) => {
-    giphy('nEkyjMV3qNGpxobOb9rYEFKcn4p15oCt');
+    giphy('nEkyjMV3qNGpxobOb9rYEFKcn4p15oCt').search({
+      q: 'pokemon',
+      rating: 'g'
+    }, function (err, res) {
+      console.log(res);
+    });
   }
 
   render() {
